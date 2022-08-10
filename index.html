@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details Form</title>
+    <style>
+      .form-center {
+      display:flex;
+      justify-content: center;
+    }
+        form {
+          background-color: white;
+          width: 500px;
+        }
+    
+        fieldset {
+          display: block;
+          margin-left: 2px;
+          margin-right: 2px;
+          padding-top: 0.35em;
+          padding-bottom: 0.625em;
+          padding-left: 0.75em;
+          padding-right: 0.75em;
+          border: 2px solid black;
+        }
+    
+        input[type="text"] {
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          margin: 15px 20px;
+          cursor: pointer;
+    
+        }
+    
+        label {
+          display: flex;
+          align-items: center;
+          margin: 15px 20px;
+          cursor: pointer;
+          font-size: 15px;
+        }
+    
+        input[type="radio"] {
+          opacity: 0;
+        }
+    
+        .design {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          outline-offset: 3px;
+          outline: 3px solid #888888;
+          margin-right: 20px;
+        }
+    
+        input[type="radio"]:checked~.design {
+          outline-color: #000;
+          background: #000;
+        }
+    
+        input[type="radio"]:checked~.value {
+          color: #000;
+    
+    
+        }
+    
+        .submit {
+          background-color: #4CAF50;
+          /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 7px;
+        }
+    
+        .center {
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+      </style>
+  </head>
+  <body>
+    <div id="app" class="form-center">
+      <form id="employeeform" name="employeeform" >
+        <fieldset>
+          <h1 style="text-align: center; color: #4CAF50;">Employee details form</h1>
+          <!-- <form name="RegForm" onsubmit="return GEEKFORGEEKS()" method="post"> -->
+    
+          <p>Name: <input type="text" id="name" name="Name" required autofocus="autofocus" /></p>
+    
+    
+    
+          <p>Age: <input type="text" id="age" name="Age" regex pattern="[0-9]+" required /></p>
+    
+          <p>Salary: <input type="text" id="salary" name="Salary" regex pattern="[0-9]+" required /></p>
+    
+          <p>Location: <input type="text" id="location" list="locationList" placeholder="Select your location" required />
+            <datalist id="locationList">
+              <option label="Gandhinagar" value="Gandhinagar"></option>
+              <option label="Ahmedabad" value="Ahmedabad"></option>
+              <option label="Surat" value="Surat"></option>
+              <option label="Jamnagar" value="Jamnagar"></option>
+            </datalist>
+          </p>
+    
+          <p>Select Gender:
+            <label>
+              <input type="radio" id="radio1" name="gender" value="male" >
+              <span class="design"></span>
+              <span class="value">Male</span>
+            </label>
+            <label>
+              <input type="radio" id="radio2" name="gender" value="female" >
+              <span class="design"></span>
+              <span class="value">Female</span>
+            </label>
+    
+          </p>
+    
+          <p>E-mail Address: <input type="text" name="EMail" id="email" regex
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required /></p>
+    
+          <p>Date of Joining:
+            <input type="text" id="doj" name="bday" required pattern="\d{2}-\d{2}-\d{4}" placeholder="dd-mm-yyyy">
+          </p>
+    
+    
+          <!-- <p>Date of joining:  <input type="date" name="Date of joining" required /></p> -->
+    
+          <p>Contact Number: <input type="text" id="Contactno" name="Contact Number" regex pattern="[1-9]{1}[0-9]{9}"
+              required /></p>
+    
+    
+    
+          <input type="submit" value="Submit" class="submit" id="save" >
+    
+          <input type="submit" value="See entered data" class="submit" id="retrieve">
+        </fieldset>
+      </form>
+
+
+    </div>
+    <br />
+  
+  <p style="font-size: 20px; font-weight: bold; text-align: center;">Entered employee details shown as below:</p>
+  <section id="data" style="align-content: center;">
+    <!-- <table id="displaytable" class="center">
+      <tr > 
+        <td>Name</td>
+        <td>Age</td>
+        <td>Salary</td>
+        <td>Location</td>
+        <td>gender</td>
+     <td>E-mail Address</td>
+     <td>Date of Joining</td>
+     <td>Contact Number</td>
+
+
+
+      </tr>
+
+    </table>
+    <p style="margin-left: 10px; margin-right: 10px; text-align: center; border: 2px;" > No data</p> --> 
+   </section> 
+
+    <script type="module" src="/employee.js"></script>
+  </body>
+</html>
